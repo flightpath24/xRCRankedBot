@@ -31,7 +31,7 @@ if not QUEUE_STATUS_CHANNEL_ID:
     logger.fatal('QUEUE_STATUS_CHANNEL_ID not found')
     raise RuntimeError('QUEUE_STATUS_CHANNEL_ID not found')
 
-QUEUE_CHANNEL_ID =int(os.getenv('QUEUE_CHANNEL_ID'))
+QUEUE_CHANNEL_ID = int(os.getenv('QUEUE_CHANNEL_ID'))
 if not QUEUE_CHANNEL_ID:
     logger.fatal('QUEUE_CHANNEL_ID not found')
     raise RuntimeError('QUEUE_CHANNEL_ID not found')
@@ -63,6 +63,11 @@ if not BOTS_ROLE_ID:
     logger.fatal('BOTS_ROLE_ID not found')
     raise RuntimeError('BOTS_ROLE_ID not found')
 
+RANKED_ADMIN_USERNAME = os.getenv('RANKED_ADMIN_USERNAME')
+if not RANKED_ADMIN_USERNAME:
+    logger.fatal('RANKED_ADMIN_USERNAME not found')
+    raise RuntimeError('RANKED_ADMIN_USERNAME not found')
+
 server_games = {
     "Test": "-1",
     "Splish Splash": "0",
@@ -84,6 +89,7 @@ server_games = {
     "Crescendo": "16",
     "High Stakes": "17",
     "Into The Deep": "18",
+    "Reefscape": "19",
 }
 
 server_games_choices = [
@@ -97,7 +103,8 @@ server_game_settings = {
     "7": "30:1:0:0:10:0",
     "9": "1:1:1:1:30:10",
     "13": "0:5:1:4:0:5:2:0:1:1:1:1:1:1:1:14:7:1:1:1:0:15:100",
-    "16": "0:5:1:2:1:5:1:20:5:20:0:1:1:1:1:1:1:1:1:14:7:1:1:1:0:15:100:1"
+    "16": "0:5:1:2:1:5:1:20:5:20:0:1:1:1:1:1:1:1:1:14:7:1:1:1:0:15:100:1",
+    "19": "0:5:1:4:1:5:0:45:2:1:1:5"
 }
 
 
@@ -122,6 +129,7 @@ short_codes = {
     "Crescendo": "CR",
     "High Stakes": "HS",
     "Into The Deep": "ITD",
+    "Reefscape": "RS",
 }
 
 default_game_players = {
@@ -144,7 +152,8 @@ default_game_players = {
     "15": 4,
     "16": 6,
     "17": 4,
-    "18": 4,    
+    "18": 4,
+    "19": 6,
 }
 
 server_restart_modes = {
@@ -164,4 +173,5 @@ game_logos = {
     "High Stakes": "https://i.imgur.com/jWu3NHB.png",
     "Power Play": "https://i.imgur.com/tuC6s0P.png",
     "Into The Deep": "https://i.imgur.com/YqT31M8.png",
+    "Reefscape": "https://i.imgur.com/LlLfz4z.gif",
 }
